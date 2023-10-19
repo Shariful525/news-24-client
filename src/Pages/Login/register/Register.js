@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, updateUserProfile, emailVerification } = useContext(AuthContext);
@@ -27,6 +28,8 @@ const Register = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
+                handleEmailVerification();
+                toast.success("please verify your email")
             })
             .catch(error => {
                 console.error("error: ", error);

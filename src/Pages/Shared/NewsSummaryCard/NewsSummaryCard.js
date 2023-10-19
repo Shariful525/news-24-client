@@ -29,14 +29,14 @@ const NewsSummaryCard = ({ news }) => {
         <Card.Img variant="top" src={news.image_url} />
 
         <Card.Body>
-            <Card.Text>
+            <div>
                 {
                     news.details.length > 200 ?
                         <p>{news.details.slice(0, 250) + '...'} <Link to={`/news/${news?._id}`}>Read More</Link></p>
                         :
                         <p>{news.details}</p>
                 }
-            </Card.Text>
+            </div>
 
 
         </Card.Body>
